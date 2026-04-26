@@ -1,0 +1,57 @@
+{
+	"matrixColor": {
+		"type": "color",
+		"text": "Font Color",
+		"value": "#00FF46"
+	},
+	"matrixSize": {
+		"type": "slider",
+		"text": "Font Size",
+		"value": 32,
+		"max": 48,
+		"min": 14,
+		"step": 1
+	},
+	"matrixSpeed": {
+		"type": "slider",
+		"text": "Speed",
+		"value": 20,
+		"max": 100,
+		"min": 1,
+		"step": 1
+	},
+	"rainBow": {
+		"type": "checkbox",
+		"text": "Rainbow",
+		"value": false
+	},
+	"rainbowSpeed": {
+		"type": "slider",
+		"text": "Rainbow Speed",
+		"value": 50,
+		"max": 100,
+		"min": 0,
+		"step": 1
+	},
+	"syncRainbow": {
+		"type": "checkbox",
+		"text": "Synchronize Rainbow",
+		"value": false
+	},
+	"trailFade": {
+		"type": "slider",
+		"text": "Trail Fade Speed",
+		"value": 3,
+		"max": 20,
+		"min": 1,
+		"step": 1
+	},
+	"frameRate": {
+		"type": "slider",
+		"text": "Frame Rate",
+		"value": 60,
+		"max": 120,
+		"min": 10,
+		"step": 10
+	}
+}

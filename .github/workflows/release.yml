@@ -17,14 +17,16 @@ jobs:
         id: version
         run: |
           BASE=$(jq -r '.AppVersion' source/LivelyInfo.json | cut -d. -f1-3)
-          echo "tag=v$BASE.${{ github.run_number }}" >> $GITHUB_OUTPUT
+          TAG="v$BASE.${{ github.run_number }}"
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "zipname=matrix-wallpaper-$TAG.zip" >> $GITHUB_OUTPUT
 
       - name: Create zip
-        run: zip -r matrix-wallpaper-v2.zip source/
+        run: cd source && zip -r "../${{ steps.version.outputs.zipname }}" .
 
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.tag }}
           name: Release ${{ steps.version.outputs.tag }}
-          files: matrix-wallpaper-v2.zip
+          files: ${{ steps.version.outputs.zipname }}
